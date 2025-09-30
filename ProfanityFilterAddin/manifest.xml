@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
            xsi:type="MailApp">
 
   <Id>00000000-0000-0000-0000-000000000001</Id>
@@ -9,6 +11,8 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Profanity Filter"/>
   <Description DefaultValue="Warns users if profanity is detected while composing email."/>
+  <IconUrl DefaultValue="https://clydea81.github.io/ProfanityFilter/assets/icon32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://clydea81.github.io/ProfanityFilter/assets/icon80.png"/>
 
   <Hosts>
     <Host Name="Mailbox"/>
@@ -20,15 +24,47 @@
     </Sets>
   </Requirements>
 
-  <FormSettings>
-    <Form xsi:type="ItemRead">
-      <DesktopSettings>
-        <SourceLocation DefaultValue="https://clydea81.github.io/ProfanityFilter/ProfanityFilterAddin/taskpane.html"/>
-      </DesktopSettings>
-    </Form>
-  </FormSettings>
+  <Resources>
+    <bt:Images>
+      <bt:Image id="icon16" DefaultValue="https://clydea81.github.io/ProfanityFilter/assets/icon16.png"/>
+      <bt:Image id="icon32" DefaultValue="https://clydea81.github.io/ProfanityFilter/assets/icon32.png"/>
+      <bt:Image id="icon80" DefaultValue="https://clydea81.github.io/ProfanityFilter/assets/icon80.png"/>
+    </bt:Images>
+    <bt:Urls>
+      <bt:Url id="taskpaneUrl" DefaultValue="https://clydea81.github.io/ProfanityFilter/ProfanityFilterAddin/taskpane.html"/>
+    </bt:Urls>
+    <bt:ShortStrings>
+      <bt:String id="groupLabel" DefaultValue="Profanity Filter"/>
+      <bt:String id="buttonLabel" DefaultValue="Scan Email"/>
+      <bt:String id="buttonTitle" DefaultValue="Profanity Filter"/>
+    </bt:ShortStrings>
+    <bt:LongStrings>
+      <bt:String id="buttonDescription" DefaultValue="Scans your email for profanity while composing."/>
+    </bt:LongStrings>
+  </Resources>
+
+  <ExtensionPoint xsi:type="MessageCompose">
+    <OfficeTab id="TabDefault">
+      <Group id="Group1">
+        <Label resid="groupLabel"/>
+        <Control xsi:type="Button" id="Button1">
+          <Label resid="buttonLabel"/>
+          <Supertip>
+            <Title resid="buttonTitle"/>
+            <Description resid="buttonDescription"/>
+          </Supertip>
+          <Icon>
+            <bt:Image size="16" resid="icon16"/>
+            <bt:Image size="32" resid="icon32"/>
+            <bt:Image size="80" resid="icon80"/>
+          </Icon>
+          <Action xsi:type="ShowTaskpane">
+            <SourceLocation resid="taskpaneUrl"/>
+          </Action>
+        </Control>
+      </Group>
+    </OfficeTab>
+  </ExtensionPoint>
 
   <Permissions>ReadWriteItem</Permissions>
-
 </OfficeApp>
-
