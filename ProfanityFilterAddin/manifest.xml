@@ -23,7 +23,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://github.com/clydea81/ProfanityFilter/blob/main/ProfanityFilterAddin/taskpane.html"/>
+        <SourceLocation DefaultValue="https://clydea81.github.io/ProfanityFilter/ProfanityFilterAddin/taskpane.html"/>
       </DesktopSettings>
     </Form>
   </FormSettings>
@@ -31,3 +31,4 @@
   <Permissions>ReadWriteItem</Permissions>
 
 </OfficeApp>
+
