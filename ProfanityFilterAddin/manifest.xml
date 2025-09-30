@@ -77,9 +77,9 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="icon16" DefaultValue="https://clydea81.github.io/ProfanityFilter/assets/icon16.png"/>
-        <bt:Image id="icon32" DefaultValue="https://clydea81.github.io/ProfanityFilter/assets/icon32.png"/>
-        <bt:Image id="icon80" DefaultValue="https://clydea81.github.io/ProfanityFilter/assets/icon80.png"/>
+        <bt:Image id="icon16" DefaultValue="https://github.com/clydea81/ProfanityFilter/blob/main/assets/File1.png"/>
+      <bt:Image id="icon32" DefaultValue="https://github.com/clydea81/ProfanityFilter/blob/main/assets/File1.png"/>
+      <bt:Image id="icon80" DefaultValue="https://github.com/clydea81/ProfanityFilter/blob/main/assets/File2.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="taskpaneUrl" DefaultValue="https://clydea81.github.io/ProfanityFilter/ProfanityFilterAddin/taskpane.html"/>
@@ -95,4 +95,5 @@
     </Resources>
   </VersionOverrides>
 </OfficeApp>
+
 
