@@ -1,5 +1,5 @@
 Office.onReady(() => {
-  const bannedWords = ["damn", "hell", "idiot"]; // Add more as needed
+  const bannedWords = ["damn", "hell", "idiot", "shit"]; // Add more as needed
 
   function scanEmail() {
     Office.context.mailbox.item.body.getAsync("text", function(result) {
@@ -20,4 +20,5 @@ Office.onReady(() => {
 
   // Scan every 10 seconds while composing
   setInterval(scanEmail, 10000);
+
 });
